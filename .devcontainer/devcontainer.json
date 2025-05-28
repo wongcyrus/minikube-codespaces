@@ -3,7 +3,5 @@
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {}
-  },
-  "postStartCommand": "minikube start --apiserver-ips=0.0.0.0 --driver=docker --force && nohup kubectl proxy --address=0.0.0.0 --accept-hosts='.*' &",
-  "forwardPorts": [8081]
+  }
 }

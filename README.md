@@ -1,4 +1,3 @@
-
 # 🚀 Deploying Minikube in GitHub Codespaces
 
 This guide walks you through starting Minikube inside a GitHub Codespace and enabling external access.
@@ -31,4 +30,17 @@ kubectl proxy --address=0.0.0.0 --accept-hosts='.*'
 
 <img src="https://i.sstatic.net/YGIVx.png" alt="Set Public Port" width="50%">
 
-3. Get the client.crt and client.key from ```/home/vscode/.minikube/profiles/minikube``` .
+3. Run the following command in your Codespace to generate the minikube-client-certs.zip package:
+
+   ```bash
+   ./copy-minikube-client-certs.sh
+   ```
+
+   This will create a zip file in your project root containing:
+   - client.crt
+   - client.key
+   - ca.crt
+   - config (kubeconfig)
+   - README.txt (usage instructions)
+
+4. Download the minikube-client-certs.zip package from the project root. Unzip it on your other PC and follow the instructions in README.txt to configure your kubeconfig and connect to Minikube remotely.
